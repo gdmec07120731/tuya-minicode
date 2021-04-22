@@ -1,0 +1,63 @@
+<!--miniprogram/pages/home_center/common_panel/index.js.wxml-->
+<wxs src="./index.wxs" module="utils" />
+
+<image class="common-panel-backgroud" src="{{forest}}" />
+<navbar device_name="{{device_name}}" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" />
+
+<view class="common-panel-header">
+  <view class="common-panel-header-block">
+  
+    
+  </view>
+</view>
+
+<!-- <block wx:if="{{isRoDpListShow}}">
+  <view class="statuslist">
+    <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
+      <view class="{{utils.countDpItem(roDpListLength,idx)}}">
+        <view class="roDpItem-dpName">{{item.code}}</view>
+        <view class="roDpItem-status">{{item.value}}</view>
+      </view>
+    </block>
+  </view>
+</block> -->
+
+<view class="scroll-view">
+  <block wx:if="{{isRwDpListShow}}">
+    <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
+      <!-- <block wx:if="{{item.type === 'Boolean'}}">
+        <Boolean model:isChecked="{{item.value}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block> -->
+      <!-- <block wx:if="{{item.type === 'Integer'}}">
+        <Integer model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block> -->
+      <!-- <block wx:if="{{item.type === 'Enum'}}">
+        <Enum model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block> -->
+    </block>
+  </block>
+  <view class=".row-r" >
+  <image class="big-image" src="../../../image/switch-one.png"></image>
+  <view class="common-panel-header-dpValue">插座已打开</view>
+</view>
+  <view class="row">
+    <view class="column">
+      <image class="roDpItem-bottom" mode="scaleToFill" src="../../../image/switch-button.png"></image>
+      <text>开关</text>
+    </view>
+    <view class="column">
+      <image class="roDpItem-bottom" mode="scaleToFill" src="../../../image/alarm-clock.png"></image>
+      <text>定时</text>
+    </view>
+    <view class="column">
+      <image class="roDpItem-bottom" mode="scaleToFill" src="../../../image/stopwatch-start.png"></image>
+      <text>倒计时</text>
+    </view>
+    <view class="column">
+      <image class="roDpItem-bottom" mode="scaleToFill" src="../../../image/charging-treasure.png"></image>
+      <text>用电量</text>
+    </view>
+  </view>
+</view>
